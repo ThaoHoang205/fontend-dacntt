@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <title>Contact Us</title>
+
+    <!-- CSS CHUNG -->
+    <link rel="stylesheet" href="../css/header.css">
+    <link rel="stylesheet" href="../css/contact.css">
+    <link rel="stylesheet" href="../css/footer.css">
+
+    <!-- ICON -->
+    <link rel="stylesheet"
+          href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+</head>
+<body>
+
+<!-- LOAD HEADER -->
+<div id="header"></div>
+
+<script>
+function setActiveMenu() {
+    const links = document.querySelectorAll(".nav-link");
+    const currentPage = location.pathname.split("/").pop();
+
+    links.forEach(link => {
+        if (link.getAttribute("href") === currentPage) {
+            link.classList.add("active");
+        }
+    });
+}
+
+// LOAD HEADER
+fetch("header.html")
+  .then(res => res.text())
+  .then(data => {
+      document.getElementById("header").innerHTML = data;
+      setActiveMenu();
+  });
+
+// LOAD FOOTER
+fetch("footer.html")
+  .then(res => res.text())
+  .then(data => {
+      document.getElementById("footer").innerHTML = data;
+  });
+</script>
+
+
+<section class="contact-map">
+  <iframe
+    src="https://www.google.com/maps?q=Rita+Food+and+Drink+Co.,Ltd&output=embed"
+    width="100%"
+    height="450"
+    style="border:0;"
+    allowfullscreen=""
+    loading="lazy"
+    referrerpolicy="no-referrer-when-downgrade">
+  </iframe>
+</section>
+
+<section class="contact-container">
+  <!-- LEFT -->
+  <div class="contact-info">
+    <img src="https://rita.com.vn/images/Logo_Rita_Beverage_and_slogan.webp" alt="Rita Logo">
+    <div class="stars">★★★★★</div>
+
+    <h3>RITA FOOD AND<br>DRINK CO.,LTD</h3>
+
+    <p>🏠 No. 08, Thong Nhat Boulevard,<br>
+       Song Than 2 Industrial Park,<br>
+       Di An Ward, Ho Chi Minh City, Vietnam</p>
+
+    <p>📞 (+84) 274 3784 688 (Office)</p>
+    <p>📞 (+84) 274 3784 788 (Sales)</p>
+    <p>✉ marketing@rita.com.vn</p>
+    <p>🌐 www.rita.com.vn</p>
+  </div>
+
+  <!-- RIGHT -->
+  <div class="contact-form">
+    <h1>CONTACT US</h1>
+    <span>- Keep up to date with us -</span>
+
+    <form>
+      <input type="text" placeholder="Name *" required>
+      <input type="email" placeholder="Email *" required>
+      <input type="text" placeholder="Phone">
+      <textarea placeholder="Message *" maxlength="1000" required></textarea>
+
+      <div class="form-footer">
+        <small>1000 characters left</small>
+        <button type="submit">SEND EMAIL</button>
+      </div>
+    </form>
+  </div>
+</section>
+
+<div id="footer"></div>
+
+
+</body>
+</html>

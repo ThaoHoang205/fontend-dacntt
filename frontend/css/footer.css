@@ -1,0 +1,94 @@
+.footer {
+    background: #fff;
+    padding: 50px 0 20px;
+    font-size: 14px;
+}
+
+.footer-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 2.2fr 1.3fr 1.5fr;
+    gap: 60px;
+    align-items: start;
+}
+
+/* Cột trái */
+.logo-col ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.logo-col li {
+    margin-bottom: 10px;
+    line-height: 1.6;
+}
+
+/* Tiêu đề cột */
+.footer-col h4 {
+    font-size: 15px;
+    font-weight: 600;
+    margin-bottom: 18px;
+    position: relative;
+}
+
+
+
+/* Menu */
+.footer-col ul {
+    list-style: none;
+    padding: 0;
+}
+
+.footer-col li {
+    margin-bottom: 12px;
+}
+
+.footer-col a {
+    color: #000;
+    text-decoration: none;
+}
+
+/* Social */
+.social {
+    display: flex;
+    gap: 10px;
+    margin-top: 15px;
+}
+
+.social span {
+    width: 38px;
+    height: 38px;
+    border: 1px solid #000;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: bold;
+}
+
+/* Thanh toán */
+.payment {
+    display: flex;
+    gap: 12px;
+    margin-top: 15px;
+}
+
+.payment img {
+    height: 28px;
+    object-fit: contain;
+}
+
+/* Khoảng cách giữa các block */
+.mt {
+    margin-top: 30px;
+}
+
+/* Copyright */
+.copyright {
+    text-align: center;
+    margin-top: 40px;
+    font-size: 13px;
+    color: #666;
+}
