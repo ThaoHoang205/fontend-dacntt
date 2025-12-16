@@ -1,0 +1,280 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <title>Thanh toán học phí</title>
+  <link rel="stylesheet" href="../css/header.css">
+  <link rel="stylesheet" href="../css/footer.css">
+  <link rel="stylesheet" href="../css/pay.css">
+</head>
+<body>
+<!-- LOAD HEADER -->
+<div id="header"></div>
+
+<script>
+function setActiveMenu() {
+    const links = document.querySelectorAll(".nav-link");
+    const currentPage = location.pathname.split("/").pop();
+
+    links.forEach(link => {
+        if (link.getAttribute("href") === currentPage) {
+            link.classList.add("active");
+        }
+    });
+}
+
+// LOAD HEADER
+fetch("header.html")
+  .then(res => res.text())
+  .then(data => {
+      document.getElementById("header").innerHTML = data;
+      setActiveMenu();
+  });
+
+// LOAD FOOTER
+fetch("footer.html")
+  .then(res => res.text())
+  .then(data => {
+      document.getElementById("footer").innerHTML = data;
+  });
+</script>
+
+<div class="overlay">
+
+  <!-- TOP -->
+  <div class="top">
+
+    <!-- LEFT -->
+    <div class="box info">
+      <h2>THÔNG TIN</h2>
+
+      <label>Tên người nhận</label>
+      <input type="text" value="" readonly>
+
+      <label>Số điện thoại</label>
+      <input type="text" value="" readonly>
+
+      <label>Địa chỉ</label>
+      <input type="text" value="" readonly>
+
+      
+
+      <label>Số tiền cần thanh toán</label>
+      <div class="money">
+        <input type="text" value="" readonly>
+        <span>➜</span>
+      </div>
+    </div>
+
+    <!-- RIGHT -->
+    <div class="box payment">
+  <h2>CHỌN HÌNH THỨC THANH TOÁN</h2>
+
+  <div class="methods">
+  <div class="method qr active" data-method="qr">
+    <img src="https://api.qrserver.com/v1/create-qr-code/?size=80x80&data=QRPay">
+    <span class="check">✔</span>
+  </div>
+
+  <div class="method cash" data-method="cash">
+    <p>TIỀN MẶT</p>
+    <span class="check">✔</span>
+  </div>
+</div>
+
+<button class="pay-btn"
+  data-invoice="8462920415"
+  data-amount="631800">
+  THANH TOÁN
+</button>
+
+
+  
+</div>
+
+
+  
+</div>
+
+
+      
+
+
+    </div>
+
+    <div id="qrOverlay" class="qr-overlay">
+  <div class="qr-modal">
+    <button class="close" onclick="closeQR()">Đóng</button>
+
+    <img id="qrImg" class="qr-img" src="">
+    <p id="qrInfo"></p>
+  </div>
+</div>
+
+
+  </div>
+
+  <!-- BOTTOM -->
+  <div class="box invoice">
+    <h2>DANH SÁCH HÓA ĐƠN</h2>
+
+    <table>
+      <thead>
+        <tr>
+          <th>Mã hóa đơn</th>
+          <th>Ngày tạo</th>
+          <th>Ngày hết hạn</th>
+          <th>Tổng</th>
+          <th>Thanh toán</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>8462920415</td>
+          <td>06/10/2025<br>07:55:27</td>
+          <td>06/10/2025<br>19:55:27</td>
+          <td>31.800 vnd</td>
+          <td class="paid">Đã thanh toán</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+</div>
+
+
+<div id="successModal" class="modal">
+  <div class="modal-box">
+    <h2>✅ Tạo đơn thành công</h2>
+    <p>Đơn thanh toán tiền mặt đã được tạo.</p>
+
+    <button class="btn-primary" onclick="openReceipt()">
+      Xem phiếu đóng tiền
+    </button>
+
+    <button class="btn-close" onclick="closeSuccess()">Đóng</button>
+  </div>
+</div>
+
+<div id="receiptModal" class="modal">
+  <div class="modal-box receipt">
+
+    <h2>BLINK</h2>
+    <h3>PHIẾU ĐÓNG TIỀN</h3>
+
+    <hr>
+
+    <h4>Thông tin chung</h4>
+    <p><b>Tên người nhận:</b> </p>
+    <p><b>Số điện thoại:</b> </p>
+    <p><b>Địa chỉ:</b> </p>
+    <p><b>Số tiền cần thanh toán:</b> </p>
+    <p><b>Ngày tạo:</b> 17/12/2025 01:25:13</p>
+    <p><b>Hạn thanh toán:</b> 17/12/2025 13:25:13</p>
+    <p><b>Trạng thái:</b> <span class="pending">Chờ thanh toán</span></p>
+
+    <h4>Thông tin thanh toán</h4>
+    <table>
+      <thead>
+        <tr>
+          <th>Nội dung thu</th>
+          <th>Số tiền</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>27684030<br>Mặt dây vàng trắng 14K gắn kim cương DOJI AFPB102001F2HA1</td>
+          <td>36,290,000đ</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <div class="receipt-actions">
+      <button onclick="window.print()">Print</button>
+      <button class="btn-close" onclick="closeReceipt()">Đóng</button>
+    </div>
+
+  </div>
+</div>
+
+
+<script>
+document.querySelector('.pay-btn').onclick = () => {
+  const isCash = document.querySelector('.method.cash').classList.contains('active');
+
+  if (isCash) {
+    document.getElementById('successModal').style.display = 'flex';
+  }
+};
+
+function closeSuccess() {
+  document.getElementById('successModal').style.display = 'none';
+}
+
+function openReceipt() {
+  closeSuccess();
+  document.getElementById('receiptModal').style.display = 'flex';
+}
+
+function closeReceipt() {
+  document.getElementById('receiptModal').style.display = 'none';
+}
+</script>
+
+
+<script>
+  const methods = document.querySelectorAll('.method');
+
+methods.forEach(m => {
+  m.onclick = () => {
+    methods.forEach(x => x.classList.remove('active'));
+    m.classList.add('active');
+  };
+});
+
+</script>
+
+<script>
+
+
+function showQR() {
+  const btn = document.querySelector('.pay-btn');
+  const invoice = btn.dataset.invoice;
+  const amount  = btn.dataset.amount;
+
+  const qrData = `HOADON:${invoice}|AMOUNT:${amount}`;
+  const qrUrl =
+    `https://api.qrserver.com/v1/create-qr-code/?size=300x300&data=${encodeURIComponent(qrData)}`;
+
+  document.getElementById('qrImg').src = qrUrl;
+  document.getElementById('qrInfo').innerText =
+    `Hóa đơn ${invoice} – ${Number(amount).toLocaleString()} VNĐ`;
+
+  document.getElementById('qrOverlay').style.display = 'flex';
+}
+
+
+function closeQR() {
+  document.getElementById('qrOverlay').style.display = 'none';
+}
+
+document.querySelector('.pay-btn').onclick = () => {
+  const activeMethod = document.querySelector('.method.active')?.dataset.method;
+
+  if (activeMethod === 'qr') {
+    showQR();
+  }
+
+  if (activeMethod === 'cash') {
+    document.getElementById('successModal').style.display = 'flex';
+  }
+};
+
+
+
+</script>
+
+
+<div id="footer"></div>
+</body>
+</html>

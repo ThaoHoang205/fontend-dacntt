@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <title>Giỏ hàng</title>
+  <link rel="stylesheet" href="../css/header.css">
+  <link rel="stylesheet" href="../css/footer.css">
+  <link rel="stylesheet" href="../css/cart.css">
+  
+</head>
+<body>
+
+
+<!-- LOAD HEADER -->
+<div id="header"></div>
+
+<script>
+function setActiveMenu() {
+    const links = document.querySelectorAll(".nav-link");
+    const currentPage = location.pathname.split("/").pop();
+
+    links.forEach(link => {
+        if (link.getAttribute("href") === currentPage) {
+            link.classList.add("active");
+        }
+    });
+}
+
+// LOAD HEADER
+fetch("header.html")
+  .then(res => res.text())
+  .then(data => {
+      document.getElementById("header").innerHTML = data;
+      setActiveMenu();
+  });
+
+// LOAD FOOTER
+fetch("footer.html")
+  .then(res => res.text())
+  .then(data => {
+      document.getElementById("footer").innerHTML = data;
+  });
+</script>
+
+<div class="cart-page">
+
+  <!-- CỘT 1: DANH MỤC -->
+  <aside class="category">
+    <h3>DANH MỤC</h3>
+    <ul>
+      <li>Khuyên tai <span>77</span></li>
+      <li>Dây chuyền <span>44</span></li>
+      <li>Lắc tay <span>38</span></li>
+      <li>Lắc chân <span>26</span></li>
+      <li>Nhẫn <span>15</span></li>
+    </ul>
+  </aside>
+
+  <!-- CỘT 2: SẢN PHẨM -->
+  <main class="products">
+    <h3>Sản phẩm nổi Bật</h3>
+
+    <div class="product-grid">
+      <div class="product-card">
+        <img src="../img/product1.png">
+        <h4>Mặt dây vàng trắng 14K gắn kim cương DOJI AFPB102001F2HA1</h4>
+        <p>36,290,000đ</p>
+        <button>+</button>
+      </div>
+
+      <div class="product-card">
+        <img src="../img/product2.png">
+        <h4>Mặt dây vàng trắng 14K gắn kim cương DOJI AFPB102042F2HA1</h4>
+        <p>34,510,000đ</p>
+        <button>+</button>
+      </div>
+    </div>
+  </main>
+
+  <!-- CỘT 3: GIỎ HÀNG -->
+  <aside class="minecart">
+  <div class="cart-header">
+    <h3>GIỎ HÀNG CỦA TÔI</h3>
+    <a href="#" class="clear">Xóa tất cả</a>
+  </div>
+
+  <!-- ITEM -->
+  <div class="cart-item">
+    <img src="../img/product1.png" alt="">
+    <div class="item-info">
+      <h4>Mặt dây vàng trắng 14K gắn kim cương DOJI AFPB102001F2HA1</h4>
+      <p>Size 15 · Không khắc</p>
+
+      <div class="qty">
+        <button>-</button>
+        <span>1</span>
+        <button>+</button>
+      </div>
+    </div>
+
+    <div class="item-price">36,290,000đ</div>
+  </div>
+
+  <!-- ITEM -->
+  <div class="cart-item">
+    <img src="../img/product2.png" alt="">
+    <div class="item-info">
+      <h4>Mặt dây vàng trắng 14K gắn kim cương DOJI AFPB102042F2HA1</h4>
+      <p>Size 16 · Có khắc</p>
+
+      <div class="qty">
+        <button>-</button>
+        <span>2</span>
+        <button>+</button>
+      </div>
+    </div>
+
+    <div class="item-price">34,510,000đ</div>
+  </div>
+
+  <!-- TOTAL -->
+  <div class="cart-total">
+    <div class="sum">
+      <span>Tổng cộng</span>
+      <strong>36,290,000đ</strong>
+    </div>
+    <a href="http://127.0.0.1:5500/frontend/html/pay.html">
+  <button class="pay">Thanh toán</button>
+</a>
+
+  </div>
+</aside>
+
+
+</div>
+
+
+<!-- POPUP THÔNG BÁO -->
+<div id="overlay" class="overlay">
+  <div class="modal">
+    <button class="close-btn" onclick="closeModal()">✕</button>
+    <h3>Thông báo</h3>
+    <p>Thời gian mở cửa từ 09:00 đến 22:30</p>
+  </div>
+</div>
+
+<script>
+  function isOpenTime() {
+    const now = new Date();
+    const h = now.getHours();
+    const m = now.getMinutes();
+    return (h > 9 || (h === 9 && m >= 0)) &&
+           (h < 22 || (h === 22 && m <= 30));
+  }
+
+  window.onload = function () {
+    if (!isOpenTime()) {
+      document.getElementById('overlay').style.display = 'flex';
+    }
+  };
+
+  function closeModal() {
+    document.getElementById('overlay').style.display = 'none';
+  }
+</script>
+
+
+<div id="footer"></div>
+</body>
+</html>
+
