@@ -1,56 +1,98 @@
 <!DOCTYPE html>
 <html lang="vi">
-<head>
-  <meta charset="UTF-8">
-  <title>Đăng nhập</title>
-  <link rel="stylesheet" href="../css/login.css">
-</head>
-<body>
 
-<div class="page">
-  <div class="card">
+  <head>
+    <meta charset="UTF-8">
+    <title>Đăng nhập</title>
+    <link rel="stylesheet" href="../css/login.css">
+  </head>
 
-    <!-- LEFT -->
-    <div class="left">
-      <img class="google-logo"
-           src="../assets/images/logo.png"
-           alt="Google">
+  <body>
 
-      <h1>Đăng nhập</h1>
-      <p>Sử dụng Tài khoản của bạn</p>
+    <div class="page">
+      <div class="card">
+
+        <!-- LEFT -->
+        <div class="left">
+          <img class="google-logo" src="../assets/images/logo.png" alt="Google">
+
+          <h1>Đăng nhập</h1>
+          <p>Sử dụng Tài khoản của bạn</p>
+        </div>
+
+        <!-- RIGHT -->
+        <div class="right">
+          <input type="text" placeholder="Số điện thoại">
+          <input type="text" placeholder="Mật khẩu">
+
+          <a href="#" class="link">Bạn quên mật khẩu</a>
+
+
+
+          <div class="actions">
+            <a href="./register.html" class="link">Tạo tài khoản</a>
+            <a href="./home.html">
+              <button class="btn" type="button">Đăng nhập</button>
+            </a>
+
+          </div>
+        </div>
+
+
+      </div>
+
+      <!-- FOOTER -->
+      <div class="footer">
+        <div class="lang">Tiếng Việt ▾</div>
+        <div class="footer-links">
+          <a href="#">Trợ giúp</a>
+          <a href="#">Quyền riêng tư</a>
+          <a href="#">Điều khoản</a>
+        </div>
+      </div>
     </div>
+    <script>
+      const loginBtn = document.querySelector(".btn");
 
-    <!-- RIGHT -->
-    <div class="right">
-  <input type="text" placeholder="Số điện thoại">
-  <input type="text" placeholder="Mật khẩu">
+      loginBtn.addEventListener("click", function (e) {
+        e.preventDefault(); // chặn chuyển trang nếu sai
 
-  <a href="#" class="link">Bạn quên mật khẩu</a>
+        const phoneInput = document.querySelector('input[placeholder="Số điện thoại"]');
+        const passwordInput = document.querySelector('input[placeholder="Mật khẩu"]');
 
-  
+        const phone = phoneInput.value.trim();
+        const password = passwordInput.value.trim();
 
-  <div class="actions">
-    <a href="./register.html" class="link">Tạo tài khoản</a>
-    <a href="./home.html">
-  <button class="btn" type="button">Đăng nhập</button>
-</a>
+        // Bắt đầu bằng 0 + đủ 10 chữ số
+        const phoneRegex = /^0[0-9]{9}$/;
 
-  </div>
-</div>
+        // Check rỗng
+        if (!phone || !password) {
+          alert("Vui lòng nhập đầy đủ số điện thoại và mật khẩu!");
+          return;
+        }
+
+        // Check số điện thoại
+        if (!phoneRegex.test(phone)) {
+          alert("Số điện thoại phải đủ 10 chữ số và bắt đầu bằng số 0!");
+          phoneInput.focus();
+          return;
+        }
+
+        // Check mật khẩu
+        if (password.length < 8) {
+          alert("Mật khẩu phải có ít nhất 8 ký tự!");
+          passwordInput.focus();
+          return;
+        }
+
+        // Thành công
+        alert("Đăng nhập thành công!");
+        window.location.href = "./home.html";
+      });
+    </script>
 
 
-  </div>
+  </body>
 
-  <!-- FOOTER -->
-  <div class="footer">
-    <div class="lang">Tiếng Việt ▾</div>
-    <div class="footer-links">
-      <a href="#">Trợ giúp</a>
-      <a href="#">Quyền riêng tư</a>
-      <a href="#">Điều khoản</a>
-    </div>
-  </div>
-</div>
-
-</body>
 </html>

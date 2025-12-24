@@ -67,7 +67,7 @@ body {
 }
 
 .right input:focus {
-  border: 2px solid #1a73e8;
+  border: 2px solid #8b1d1d;
   outline: none;
 }
 
@@ -75,7 +75,7 @@ body {
 .link {
   display: inline-block;
   margin-top: 8px;
-  color: #1a73e8;
+  color: #8b1d1d;
   font-size: 14px;
   text-decoration: none;
 }
@@ -93,7 +93,7 @@ body {
 }
 
 .note a {
-  color: #1a73e8;
+  color: #8b1d1d;
   text-decoration: none;
 }
 
@@ -112,7 +112,7 @@ body {
 
 /* BUTTON */
 .btn {
-  background: #1a73e8;
+  background: #8b1d1d;
   color: #fff;
   border: none;
   padding: 10px 26px;
@@ -123,7 +123,7 @@ body {
 
 
 .btn:hover {
-  background: #1558b0;
+  background: #a12222;
 }
 
 /* FOOTER */

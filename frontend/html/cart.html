@@ -1,171 +1,409 @@
 <!DOCTYPE html>
 <html lang="vi">
-<head>
-  <meta charset="UTF-8">
-  <title>Giỏ hàng</title>
-  <link rel="stylesheet" href="../css/header.css">
-  <link rel="stylesheet" href="../css/footer.css">
-  <link rel="stylesheet" href="../css/cart.css">
-  
-</head>
-<body>
+
+  <head>
+    <meta charset="UTF-8">
+    <title>Giỏ hàng</title>
+    <link rel="stylesheet" href="../css/header.css">
+    <link rel="stylesheet" href="../css/footer.css">
+    <link rel="stylesheet" href="../css/cart.css">
+
+  </head>
+
+  <body>
 
 
-<!-- LOAD HEADER -->
-<div id="header"></div>
+    <!-- LOAD HEADER -->
+    <div id="header"></div>
 
-<script>
-function setActiveMenu() {
-    const links = document.querySelectorAll(".nav-link");
-    const currentPage = location.pathname.split("/").pop();
+    <script>
+      function setActiveMenu() {
+        const links = document.querySelectorAll(".nav-link");
+        const currentPage = location.pathname.split("/").pop();
 
-    links.forEach(link => {
-        if (link.getAttribute("href") === currentPage) {
+        links.forEach(link => {
+          if (link.getAttribute("href") === currentPage) {
             link.classList.add("active");
+          }
+        });
+      }
+
+      // LOAD HEADER
+      fetch("header.html")
+        .then(res => res.text())
+        .then(data => {
+          document.getElementById("header").innerHTML = data;
+          setActiveMenu();
+        });
+
+      // LOAD FOOTER
+      fetch("footer.html")
+        .then(res => res.text())
+        .then(data => {
+          document.getElementById("footer").innerHTML = data;
+        });
+    </script>
+
+    <div class="cart-page">
+
+      <!-- CỘT 1: DANH MỤC -->
+      <aside class="category">
+        <h3>DANH MỤC</h3>
+        <ul>
+          <li>Khuyên tai <span>77</span></li>
+          <li>Dây chuyền <span>44</span></li>
+          <li>Lắc tay <span>38</span></li>
+          <li>Lắc chân <span>26</span></li>
+          <li>Nhẫn <span>15</span></li>
+        </ul>
+      </aside>
+
+      <!-- CỘT 2: SẢN PHẨM -->
+      <main class="products">
+        <h3>Sản phẩm nổi Bật</h3>
+
+        <!-- Sản phẩm 1 -->
+        <div class="product-grid">
+          <div class="product-card">
+            <img src="../assets/images/mat-day-truyen-vang-trang.jpg">
+            <h4>Mặt dây vàng trắng 14K gắn kim cương DOJI AFPB102001F2HA1</h4>
+            <p>36,290,000đ</p>
+            <button>+</button>
+          </div>
+
+          <!-- sản phẩm 2 -->
+          <div class="product-card">
+            <img src="../assets/images/mat-day-truyen-vang-trang-3.jpg">
+            <h4>Mặt dây vàng trắng 14K gắn kim cương DOJI AFPB102042F2HA1</h4>
+            <p>34,510,000đ</p>
+            <button>+</button>
+          </div>
+
+          <!-- sản phẩm 3 -->
+          <div class="product-card">
+            <img src="../assets/images/nhan-vang.jpg">
+            <h4>Nhẫn vàng nguyên chất gắn kim cương DOJI AFPB102001F2HA1</h4>
+            <p>6,290,000đ</p>
+            <button>+</button>
+          </div>
+
+          <!-- sản phẩm 4 -->
+          <div class="product-card">
+            <img src="../assets/images/mat-day-truyen-vang-trang-4.jpg">
+            <h4>Dây truyền bạc trắng gắn kim cương DOJI AFPB102042F2HA1</h4>
+            <p class="price">34,510,000đ</p>
+            <button>+</button>
+          </div>
+
+          <!-- sản phẩm 5 -->
+          <div class="product-card">
+            <img src="../assets/images/hoa-tai-vang-trang-2.jpg">
+            <h4>Hoa tai vàng trắng 14K gắn kim cương DOJI AFEB002119F2HA1</h4>
+            <p class="price">35,120,000đ</p>
+            <button>+</button>
+          </div>
+
+          <!-- sản phẩm 6 -->
+          <div class="product-card">
+            <img src="../assets/images/vong-charm-2.jpg">
+            <h4>Vòng charm mẫu bằng vàng DOJI AFPB102001F2HA1</h4>
+            <p class="price">20,290,000đ</p>
+            <button>+</button>
+          </div>
+
+          <!-- sản phẩm 7 -->
+          <div class="product-card">
+            <img src="../assets/images/lac-tay-2.jpg">
+            <h4>Lắc tay đính gắn kim cương DOJI AFPB102001F2HA1</h4>
+            <p class="price">17,290,000đ</p>
+            <button>+</button>
+          </div>
+
+          <!-- sản phẩm 8 -->
+          <div class="product-card">
+            <img src="../assets/images/day-chuyen.jpg">
+            <h4>Dây truyền tình yêu DOJI AFPB102001F2HA1</h4>
+            <p class="price">36,290,000đ</p>
+            <button>+</button>
+          </div>
+
+          <!-- sản phẩm 9 -->
+          <div class="product-card">
+            <img src="../assets/images/nhan-vang-2.jpg">
+            <h4>Nhẫn vàng đẹp cho cặp mới cưới DOJI AFPB102001F2HA1</h4>
+            <p>36,290,000đ</p>
+            <button>+</button>
+          </div>
+
+          <!-- sản phẩm 10 -->
+          <div class="product-card">
+            <img src="../assets/images/vong-charm-2.jpg">
+            <h4>Vòng charm mẫu mới bằng vàng DOJI AFPB102001F2HA1</h4>
+            <p class="price">20,290,000đ</p>
+            <button>+</button>
+          </div>
+
+          <!-- sản phẩm 11 -->
+          <div class="product-card">
+            <img src="../assets/images/mat-day-truyen-vang-trang-3.jpg">
+            <h4>Mặt dây chuyền hoa nhiều cánh DOJI AFPB102001F2HA1</h4>
+            <p class="price">26,290,000đ</p>
+            <button>+</button>
+          </div>
+
+          <!-- sản phẩm cuối -->
+          <div class="product-card">
+            <img src="../assets/images/hoa-tai-vang-trang.jpg">
+            <h4>Hoa tai vàng trắng 14K gắn kim cương DOJI AFEB002119F2HA1</h4>
+            <p class="price">15,120,000đ</p>
+            <button>+</button>
+          </div>
+        </div>
+      </main>
+
+      <!-- CỘT 3: GIỎ HÀNG -->
+      <aside class="minecart">
+        <div class="cart-header">
+          <h3>GIỎ HÀNG CỦA TÔI</h3>
+          <a href="#" class="clear">Xóa tất cả</a>
+        </div>
+
+        <!-- ITEM -->
+        <div class="cart-item">
+          <img src="../assets/images/mat-day-truyen-vang-trang.jpg" alt="">
+          <div class="item-info">
+            <h4>Mặt dây vàng trắng 14K gắn kim cương DOJI AFPB102001F2HA1</h4>
+            <p>Size 15 · Không khắc</p>
+
+            <div class="qty">
+              <button>-</button>
+              <span>1</span>
+              <button>+</button>
+            </div>
+          </div>
+
+          <div class="item-price">36,290,000đ</div>
+        </div>
+
+        <!-- ITEM -->
+        <div class="cart-item">
+          <img src="../assets/images/mat-day-truyen-vang-trang-3.jpg" alt="">
+          <div class="item-info">
+            <h4>Mặt dây vàng trắng 14K gắn kim cương DOJI AFPB102042F2HA1</h4>
+            <p>Size 16 · Có khắc</p>
+
+            <div class="qty">
+              <button>-</button>
+              <span>2</span>
+              <button>+</button>
+            </div>
+          </div>
+
+          <div class="item-price">34,510,000đ</div>
+        </div>
+
+        <!-- TOTAL -->
+        <div class="cart-total">
+          <div class="sum">
+            <span>Tổng cộng</span>
+            <strong>36,290,000đ</strong>
+          </div>
+          <a href="./pay.html">
+            <button class="pay">Thanh toán</button>
+          </a>
+
+        </div>
+      </aside>
+
+
+    </div>
+
+
+    <!-- POPUP THÔNG BÁO -->
+    <div id="overlay" class="overlay">
+      <div class="modal">
+        <button class="close-btn" onclick="closeModal()">✕</button>
+        <h3>Thông báo</h3>
+        <p>Thời gian mở cửa từ 09:00 đến 22:30</p>
+      </div>
+    </div>
+
+    <script>
+      function isOpenTime() {
+        const now = new Date();
+        const h = now.getHours();
+        const m = now.getMinutes();
+        return (h > 9 || (h === 9 && m >= 0)) &&
+          (h < 22 || (h === 22 && m <= 30));
+      }
+
+      window.onload = function () {
+        if (!isOpenTime()) {
+          document.getElementById('overlay').style.display = 'flex';
         }
-    });
-}
+      };
 
-// LOAD HEADER
-fetch("header.html")
-  .then(res => res.text())
-  .then(data => {
-      document.getElementById("header").innerHTML = data;
-      setActiveMenu();
-  });
+      function closeModal() {
+        document.getElementById('overlay').style.display = 'none';
+      }
 
-// LOAD FOOTER
-fetch("footer.html")
-  .then(res => res.text())
-  .then(data => {
-      document.getElementById("footer").innerHTML = data;
-  });
-</script>
+      function parseMoney(text) {
+        return parseInt(text.replace(/[^\d]/g, ""));
+      }
 
-<div class="cart-page">
+      function formatMoney(number) {
+        return number.toLocaleString("vi-VN") + "đ";
+      }
 
-  <!-- CỘT 1: DANH MỤC -->
-  <aside class="category">
-    <h3>DANH MỤC</h3>
-    <ul>
-      <li>Khuyên tai <span>77</span></li>
-      <li>Dây chuyền <span>44</span></li>
-      <li>Lắc tay <span>38</span></li>
-      <li>Lắc chân <span>26</span></li>
-      <li>Nhẫn <span>15</span></li>
-    </ul>
-  </aside>
+      function updateTotal() {
+        let total = 0;
 
-  <!-- CỘT 2: SẢN PHẨM -->
-  <main class="products">
-    <h3>Sản phẩm nổi Bật</h3>
+        document.querySelectorAll(".cart-item").forEach(item => {
+          const priceText = item.querySelector(".item-price").innerText;
+          const price = parseMoney(priceText);
+          const qty = parseInt(item.querySelector(".qty span").innerText);
 
-    <div class="product-grid">
-      <div class="product-card">
-        <img src="../img/product1.png">
-        <h4>Mặt dây vàng trắng 14K gắn kim cương DOJI AFPB102001F2HA1</h4>
-        <p>36,290,000đ</p>
-        <button>+</button>
-      </div>
+          total += price * qty;
+        });
 
-      <div class="product-card">
-        <img src="../img/product2.png">
-        <h4>Mặt dây vàng trắng 14K gắn kim cương DOJI AFPB102042F2HA1</h4>
-        <p>34,510,000đ</p>
-        <button>+</button>
-      </div>
-    </div>
-  </main>
+        document.querySelector(".cart-total strong").innerText = formatMoney(total);
+      }
 
-  <!-- CỘT 3: GIỎ HÀNG -->
-  <aside class="minecart">
-  <div class="cart-header">
-    <h3>GIỎ HÀNG CỦA TÔI</h3>
-    <a href="#" class="clear">Xóa tất cả</a>
-  </div>
+      // xử lý nút +
+      document.querySelectorAll(".qty button:last-child").forEach(btn => {
+        btn.addEventListener("click", () => {
+          const qtySpan = btn.parentElement.querySelector("span");
+          qtySpan.innerText = parseInt(qtySpan.innerText) + 1;
+          updateTotal();
+        });
+      });
 
-  <!-- ITEM -->
-  <div class="cart-item">
-    <img src="../img/product1.png" alt="">
-    <div class="item-info">
-      <h4>Mặt dây vàng trắng 14K gắn kim cương DOJI AFPB102001F2HA1</h4>
-      <p>Size 15 · Không khắc</p>
+      // xử lý nút -
+      document.querySelectorAll(".qty button:first-child").forEach(btn => {
+        btn.addEventListener("click", () => {
+          const qtySpan = btn.parentElement.querySelector("span");
+          let qty = parseInt(qtySpan.innerText);
 
-      <div class="qty">
-        <button>-</button>
-        <span>1</span>
-        <button>+</button>
-      </div>
-    </div>
+          if (qty > 1) {
+            qtySpan.innerText = qty - 1;
+            updateTotal();
+          }
+        });
+      });
 
-    <div class="item-price">36,290,000đ</div>
-  </div>
+      // chạy khi load trang
+      updateTotal();
+      /* XÓA TẤT CẢ */
+      document.querySelector(".clear").addEventListener("click", function (e) {
+        e.preventDefault(); // không reload trang
 
-  <!-- ITEM -->
-  <div class="cart-item">
-    <img src="../img/product2.png" alt="">
-    <div class="item-info">
-      <h4>Mặt dây vàng trắng 14K gắn kim cương DOJI AFPB102042F2HA1</h4>
-      <p>Size 16 · Có khắc</p>
+        // Xóa toàn bộ sản phẩm
+        document.querySelectorAll(".cart-item").forEach(item => {
+          item.remove();
+        });
 
-      <div class="qty">
-        <button>-</button>
-        <span>2</span>
-        <button>+</button>
-      </div>
-    </div>
+        // Cập nhật tổng tiền = 0
+        document.querySelector(".cart-total strong").innerText = formatMoney(0);
+      });
+      function parseMoney(text) {
+        return parseInt(text.replace(/[^\d]/g, ""));
+      }
 
-    <div class="item-price">34,510,000đ</div>
-  </div>
+      function formatMoney(number) {
+        return number.toLocaleString("vi-VN") + "đ";
+      }
 
-  <!-- TOTAL -->
-  <div class="cart-total">
-    <div class="sum">
-      <span>Tổng cộng</span>
-      <strong>36,290,000đ</strong>
-    </div>
-    <a href="./pay.html">
-  <button class="pay">Thanh toán</button>
-</a>
+      function updateTotal() {
+        let total = 0;
 
-  </div>
-</aside>
+        document.querySelectorAll(".cart-item").forEach(item => {
+          const price = parseMoney(item.querySelector(".item-price").innerText);
+          const qty = parseInt(item.querySelector(".qty span").innerText);
+          total += price * qty;
+        });
+
+        document.querySelector(".cart-total strong").innerText = formatMoney(total);
+      }
+
+      // xử lý nút + và -
+      function bindQtyEvents(cartItem) {
+        const minus = cartItem.querySelector(".qty button:first-child");
+        const plus = cartItem.querySelector(".qty button:last-child");
+        const qtySpan = cartItem.querySelector(".qty span");
+
+        plus.onclick = () => {
+          qtySpan.innerText = parseInt(qtySpan.innerText) + 1;
+          updateTotal();
+        };
+
+        minus.onclick = () => {
+          let qty = parseInt(qtySpan.innerText);
+          if (qty > 1) {
+            qtySpan.innerText = qty - 1;
+            updateTotal();
+          }
+        };
+      }
+
+      // thêm sản phẩm từ main vào giỏ
+      document.querySelectorAll(".product-card button").forEach(btn => {
+        btn.addEventListener("click", () => {
+          const card = btn.parentElement;
+          const img = card.querySelector("img").src;
+          const name = card.querySelector("h4").innerText;
+          const priceText = card.querySelector("p").innerText;
+          const price = parseMoney(priceText);
+
+          // kiểm tra sản phẩm đã có trong giỏ chưa
+          let existingItem = null;
+          document.querySelectorAll(".cart-item").forEach(item => {
+            if (item.querySelector("h4").innerText === name) {
+              existingItem = item;
+            }
+          });
+
+          if (existingItem) {
+            // nếu có rồi thì tăng số lượng
+            const qtySpan = existingItem.querySelector(".qty span");
+            qtySpan.innerText = parseInt(qtySpan.innerText) + 1;
+          } else {
+            // tạo cart-item mới
+            const cartItem = document.createElement("div");
+            cartItem.className = "cart-item";
+
+            cartItem.innerHTML = `
+          <img src="${img}">
+          <div class="item-info">
+            <h4>${name}</h4>
+            <p>Size mặc định · Không khắc</p>
+            <div class="qty">
+              <button>-</button>
+              <span>1</span>
+              <button>+</button>
+            </div>
+          </div>
+          <div class="item-price">${formatMoney(price)}</div>
+        `;
+
+            document.querySelector(".cart-total")
+              .before(cartItem);
+
+            bindQtyEvents(cartItem);
+          }
+
+          updateTotal();
+        });
+      });
+
+      // gán sự kiện cho item có sẵn
+      document.querySelectorAll(".cart-item").forEach(bindQtyEvents);
+
+      updateTotal();
+
+    </script>
 
 
-</div>
+    <div id="footer"></div>
+  </body>
 
-
-<!-- POPUP THÔNG BÁO -->
-<div id="overlay" class="overlay">
-  <div class="modal">
-    <button class="close-btn" onclick="closeModal()">✕</button>
-    <h3>Thông báo</h3>
-    <p>Thời gian mở cửa từ 09:00 đến 22:30</p>
-  </div>
-</div>
-
-<script>
-  function isOpenTime() {
-    const now = new Date();
-    const h = now.getHours();
-    const m = now.getMinutes();
-    return (h > 9 || (h === 9 && m >= 0)) &&
-           (h < 22 || (h === 22 && m <= 30));
-  }
-
-  window.onload = function () {
-    if (!isOpenTime()) {
-      document.getElementById('overlay').style.display = 'flex';
-    }
-  };
-
-  function closeModal() {
-    document.getElementById('overlay').style.display = 'none';
-  }
-</script>
-
-
-<div id="footer"></div>
-</body>
 </html>
-

@@ -1,45 +1,142 @@
 <!DOCTYPE html>
 <html lang="vi">
-<head>
-<meta charset="UTF-8">
-<title>Tạo Tài khoản</title>
-<link rel="stylesheet" href="../css/register.css">
-</head>
-<body>
 
-<div class="page">
-  <div class="card">
+  <head>
+    <meta charset="UTF-8">
+    <title>Tạo Tài khoản</title>
+    <link rel="stylesheet" href="../css/register.css">
+  </head>
 
-    <!-- LEFT -->
-    <div class="left">
-      <img class="google-logo"
-           src="../assets/images/logo.png"
-           alt="BLINK">
-      <h1>Tạo Tài khoản</h1>
+  <body>
+
+    <div class="page">
+      <div class="card">
+
+        <!-- TOP -->
+        <div class="left">
+          <img class="google-logo" src="../assets/images/logo.png" alt="BLINK">
+          <h1>Tạo Tài khoản</h1>
+        </div>
+
+        <!-- LEFT -->
+        <div class="left">
+          <p>Họ và tên</p>
+          <input type="text" placeholder="Nhập họ và tên">
+          <p>Số điện thoại</p>
+          <input type="text" placeholder="Nhập số điện thoại">
+          <p>Tạo mật khẩu</p>
+          <input type="text" placeholder="Nhập mật khẩu">
+          <a href="./login.html">
+            <!-- <button type="button">Quay lại đăng nhập</button> -->
+          </a>
+        </div>
+        <div class="right">
+          <p>Ngày sinh</p>
+          <input type="text" placeholder="dd/mm/yy">
+          <p>Email</p>
+          <input type="text" placeholder="Mời nhập email">
+          <p>Nhập lại mật khẩu</p>
+          <input type="text" placeholder="Mời nhập lại mật khẩu">
+          <a href="./login.html">
+            <!-- <button type="button">Đăng ký</button> -->
+          </a>
+          <div class="form-actions">
+            <a href="./login.html">
+              <button class="btn-back" type="button">Quay lại đăng nhập</button>
+            </a>
+            <a href="./home.html">
+              <button class="btn-submit" type="button">Đăng ký</button>
+            </a>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- FOOTER -->
+      <div class="footer">
+        <div>Tiếng Việt ▾</div>
+        <div class="footer-links">
+          <a href="#">Trợ giúp</a>
+          <a href="#">Quyền riêng tư</a>
+          <a href="#">Điều khoản</a>
+        </div>
+      </div>
     </div>
 
-    <!-- RIGHT -->
-    <div class="right">
-      <input type="text" placeholder="Số điện thoại">
-      <input type="text" placeholder="Mật khẩu">
-      <a href="./login.html">
-  <button type="button">Đăng ký</button>
-</a>
 
-    </div>
+    <script>
+      const btnSubmit = document.querySelector(".btn-submit");
 
-  </div>
+      btnSubmit.addEventListener("click", function (e) {
+        e.preventDefault(); // chặn chuyển trang khi chưa hợp lệ
 
-  <!-- FOOTER -->
-  <div class="footer">
-    <div>Tiếng Việt ▾</div>
-    <div class="footer-links">
-      <a href="#">Trợ giúp</a>
-      <a href="#">Quyền riêng tư</a>
-      <a href="#">Điều khoản</a>
-    </div>
-  </div>
-</div>
+        // Lấy input
+        const fullName = document.querySelector('input[placeholder="Nhập họ và tên"]');
+        const phone = document.querySelector('input[placeholder="Nhập số điện thoại"]');
+        const password = document.querySelector('input[placeholder="Nhập mật khẩu"]');
+        const birthday = document.querySelector('input[placeholder="dd/mm/yy"], input[type="date"]');
+        const email = document.querySelector('input[placeholder="Mời nhập email"]');
+        const rePassword = document.querySelector('input[placeholder="Mời nhập lại mật khẩu"]');
 
-</body>
+        // Regex
+        const phoneRegex = /^[0-9]{10}$/;
+        const gmailRegex = /^[a-zA-Z0-9._%+-]+@gmail\.com$/;
+
+        // Validate trống
+        if (
+          !fullName.value ||
+          !phone.value ||
+          !password.value ||
+          !birthday.value ||
+          !email.value ||
+          !rePassword.value
+        ) {
+          alert("Vui lòng nhập đầy đủ tất cả các trường!");
+          return;
+        }
+
+        // Validate họ tên
+        if (fullName.value.trim().length === 0) {
+          alert("Họ và tên không được để trống!");
+          fullName.focus();
+          return;
+        }
+
+        // Validate số điện thoại
+        if (!phoneRegex.test(phone.value)) {
+          alert("Số điện thoại phải đủ 10 chữ số!");
+          phone.focus();
+          return;
+        }
+
+        // Validate email
+        if (!gmailRegex.test(email.value)) {
+          alert("Email phải đúng định dạng @gmail.com!");
+          email.focus();
+          return;
+        }
+
+        // Validate mật khẩu
+        if (password.value.length < 8) {
+          alert("Mật khẩu phải có ít nhất 8 ký tự!");
+          password.focus();
+          return;
+        }
+
+        // Validate nhập lại mật khẩu
+        if (password.value !== rePassword.value) {
+          alert("Mật khẩu nhập lại không khớp!");
+          rePassword.focus();
+          return;
+        }
+
+        // Thành công
+        alert("Đăng ký thành công!");
+        window.location.href = "./home.html";
+      });
+    </script>
+
+
+  </body>
+
 </html>

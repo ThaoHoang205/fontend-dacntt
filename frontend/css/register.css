@@ -47,41 +47,141 @@ body {
   color: #444;
 }
 
-/* RIGHT */
+.form-container {
+  max-width: 900px;
+  margin: 40px auto;
+  display: flex;
+  gap: 40px;
+}
+
+.left,
 .right {
-  width: 45%;
+  width: 50%;
   display: flex;
   flex-direction: column;
-  gap: 24px;
+  gap: 20px;
 }
 
-.right input {
-  height: 56px;
-  padding: 0 16px;
-  font-size: 16px;
-  border-radius: 4px;
-  border: 1px solid #9aa0a6;
-  outline: none;
-}
-
-.right input:focus {
-  border: 2px solid #1a73e8;
-}
-
-.right button {
-  align-self: flex-end;
-  padding: 12px 28px;
-  border-radius: 24px;
-  border: none;
-  font-size: 16px;
+.left p,
+.right p {
+  font-size: 14px;
   font-weight: 500;
-  background: #1a73e8;
-  color: #fff;
-  cursor: pointer;
+  color: #202124;
+  margin-bottom: -8px;
 }
 
-.right button:hover {
-  background: #1669c1;
+.left input,
+.right input {
+  height: 48px;
+  padding: 0 16px;
+  font-size: 15px;
+  border-radius: 5px;
+  /* BO TRÒN */
+  border: 1px solid #dadce0;
+  outline: none;
+  background-color: #fff;
+  margin-right: 15px;
+}
+
+.left input:focus,
+.right input:focus {
+  border-color: #1a73e8;
+}
+
+/* sửa từ đây */
+/* .form-actions {
+  display: flex;
+  justify-content: space-between; */
+/* trái – phải */
+/* align-items: center;
+  margin-top: 30px;
+} */
+
+/* .form-actions button {
+  width: 48%;
+  height: 48px;
+  border-radius: 20px;
+  font-size: 15px;
+  cursor: pointer;
+  margin-top: -20px;
+}
+
+.btn-back {
+  border: 1px solid #dadce0;
+  background-color: white;
+  color: #202124;
+}
+
+.btn-back:hover {
+  background-color: #f5f5f5;
+}
+
+.btn-submit {
+  border: none;
+  background-color: #8b1d1d;
+  color: white;
+  font-weight: 500;
+}
+
+.btn-submit:hover {
+  background-color: #a12222;
+} */
+/* hết sửa ở đây */
+.form-actions {
+  display: flex;
+  gap: 16px;
+  margin-top: 10px;
+}
+
+.form-actions .action-link {
+  flex: 1;
+  text-decoration: none;
+}
+
+.form-actions button {
+  width: 150px;
+  height: 48px;
+  border-radius: 24px;
+  font-size: 15px;
+  cursor: pointer;
+  transition: all 0.25s ease;
+}
+
+.btn-back {
+  border: 1px solid #dadce0;
+  background-color: #fff;
+  color: #202124;
+}
+
+.btn-back:hover {
+  background-color: #f1f3f4;
+  border-color: #c6c6c6;
+}
+
+.btn-submit {
+  border: none;
+  background-color: #8b1d1d;
+  color: white;
+  font-weight: 500;
+}
+
+.btn-submit:hover {
+  background-color: #a12222;
+}
+
+/* nút trái */
+.btn-back {
+  border: 1px solid #dadce0;
+  background: white;
+  color: #202124;
+}
+
+/* nút phải */
+.btn-submit {
+  background: #8b1d1d;
+  border: none;
+  color: white;
+  font-weight: 500;
 }
 
 .field {
@@ -114,8 +214,8 @@ body {
 }
 
 /* KHI FOCUS HOẶC CÓ TEXT */
-.field input:focus + label,
-.field input:valid + label {
+.field input:focus+label,
+.field input:valid+label {
   top: -6px;
   font-size: 12px;
 }
@@ -148,7 +248,8 @@ body {
     gap: 40px;
   }
 
-  .left, .right {
+  .left,
+  .right {
     width: 100%;
   }
 
@@ -156,4 +257,3 @@ body {
     align-self: flex-start;
   }
 }
-
