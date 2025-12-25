@@ -1,0 +1,499 @@
+<!DOCTYPE html>
+<html lang="vi">
+
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Sản phẩm | BLINK</title>
+
+        <link rel="icon" type="image/webp" href="../assets/images/logo.png">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+        <link rel="stylesheet" href="../css/home.css">
+        <link rel="stylesheet" href="../css/product.css">
+    </head>
+
+    <body>
+        <section class="hero">
+            <img src="https://theme.hstatic.net/200000567741/1001359727/14/slide_1.jpg?v=449" alt="Hero Image">
+        </section>
+        <!-- ===== HEADER ===== -->
+        <header class="header">
+            <nav class="nav nav-left">
+                <a href="home.html" class="nav-link">TRANG CHỦ</a>
+                <a href="product.html" class="nav-link active">SẢN PHẨM</a>
+                <a href="contact.html" class="nav-link">LIÊN HỆ</a>
+            </nav>
+
+            <div class="logo">
+                <img src="../assets/images/logo.png" alt="Logo">
+            </div>
+
+            <nav class="nav nav-right">
+                <a href="cart.html" class="cart">
+                    <i class="fa-solid fa-cart-shopping"></i>
+                    <span class="cart-count">0</span>
+                </a>
+                <a href="login.html" class="nav-link auth">ĐĂNG NHẬP</a>
+                <a href="register.html" class="nav-link auth">ĐĂNG KÝ</a>
+            </nav>
+        </header>
+
+        <!-- ===== BREADCRUMB ===== -->
+        <div class="breadcrumb">
+            <a href="home.html">Trang chủ</a> /
+            <span>Trang sức</span>
+        </div>
+
+        <!-- ===== CATEGORY TABS (GIỐNG ẢNH) ===== -->
+        <section class="category-tabs">
+            <a class="tab active">Trang sức</a>
+            <a class="tab">Trang sức cưới</a>
+            <a class="tab">Trang sức kim cương</a>
+            <a class="tab">Trang sức vàng 24K</a>
+            <a class="tab">Trang sức đá màu</a>
+            <a class="tab">Trang sức bạc</a>
+        </section>
+
+        <!-- ===== FILTER BAR ===== -->
+        <section class="filter-bar">
+            <div class="filter-left">
+                <span>Chọn theo:</span>
+
+                <select id="filter-price">
+                    <option value="all">Giá</option>
+                    <option value="under5">Dưới 5 triệu</option>
+                    <option value="5to10">5 – 10 triệu</option>
+                    <option value="above10">Trên 10 triệu</option>
+                </select>
+
+                <select id="filter-material">
+                    <option value="all">Chất liệu</option>
+                    <option value="vàng 24k">Vàng 24K</option>
+                    <option value="vàng 18k">Vàng 18K</option>
+                    <option value="bạc">Bạc</option>
+                </select>
+
+                <select id="filter-collection">
+                    <option value="all">Bộ sưu tập</option>
+                    <option value="hồ điệp">Hồ điệp</option>
+                    <option value="lục lạc">Lục lạc</option>
+                    <option value="ngọc trai">Ngọc trai</option>
+                </select>
+            </div>
+
+            <div class="filter-right">
+                <select id="sort-products">
+                    <option value="default">Sắp xếp theo</option>
+                    <option value="newest">Mới nhất</option>
+                    <option value="price-asc">Giá tăng dần</option>
+                    <option value="price-desc">Giá giảm dần</option>
+                </select>
+            </div>
+        </section>
+
+
+
+        <!-- ===== PRODUCT GRID ===== -->
+        <section class="product-section">
+
+            <div class="product-grid">
+
+                <!-- CARD -->
+                <div class="product-card">
+                    <span class="badge">NEW</span>
+                    <img src="../assets/images/vong-charm-2.jpg">
+                    <h3>Vòng charm vàng 24K DOJI</h3>
+                    <p class="old-price">5.200.000đ</p>
+                    <p class="price">4.800.000đ</p>
+                </div>
+
+                <div class="product-card">
+                    <span class="badge">-10%</span>
+                    <img src="../assets/images/lac-tay.jpg">
+                    <h3>Vòng tay hồ điệp vàng 24K</h3>
+                    <p class="old-price">6.500.000đ</p>
+                    <p class="price">5.900.000đ</p>
+                </div>
+
+                <div class="product-card">
+                    <img src="../assets/images/nhan-vang.jpg">
+                    <h3>Nhẫn vàng 24K họa tiết hoa nhí kim cương</h3>
+                    <p class="price">4.200.000đ</p>
+                </div>
+
+                <div class="product-card">
+                    <span class="badge">HOT</span>
+                    <img src="../assets/images/day-chuyen.jpg">
+                    <h3>Dây chuyền vàng 24K</h3>
+                    <p class="price">11.300.000đ</p>
+                </div>
+                <div class="product-card">
+                    <span class="badge">NEW</span>
+                    <img src="../assets/images/vong-charm-2.jpg">
+                    <h3>Vòng charm vàng 24K DOJI</h3>
+                    <p class="old-price">5.200.000đ</p>
+                    <p class="price">4.800.000đ</p>
+                </div>
+                <div class="product-card">
+                    <span class="badge">HOT</span>
+                    <img src="../assets/images/day-chuyen.jpg" alt="Dây chuyền vàng 24K">
+                    <h3>Dây chuyền vàng 24K mặt trái tim</h3>
+                    <p class="price">11.300.000đ</p>
+                </div>
+
+                <div class="product-card">
+                    <span class="badge">NEW</span>
+                    <img src="../assets/images/vong-charm-2.jpg" alt="Vòng charm vàng 24K DOJI">
+                    <h3>Vòng charm vàng 24K DOJI mẫu mới</h3>
+                    <p class="old-price">5.200.000đ</p>
+                    <p class="price">4.800.000đ</p>
+                </div>
+
+                <div class="product-card">
+                    <span class="badge">NEW</span>
+                    <img src="../assets/images/vong-charm-2.jpg" alt="Vòng charm vàng 24K cổ điển">
+                    <h3>Vòng charm vàng 24K cổ điển</h3>
+                    <p class="old-price">5.500.000đ</p>
+                    <p class="price">5.000.000đ</p>
+                </div>
+
+                <div class="product-card">
+                    <span class="badge">-15%</span>
+                    <img src="../assets/images/lac-tay.jpg" alt="Vòng tay hồ điệp vàng 24K">
+                    <h3>Vòng tay hồ điệp vàng 24K sang trọng</h3>
+                    <p class="old-price">6.500.000đ</p>
+                    <p class="price">5.525.000đ</p>
+                </div>
+
+                <div class="product-card">
+                    <img src="../assets/images/nhan-vang.jpg" alt="Nhẫn vàng 24K họa tiết hoa nhí kim cương">
+                    <h3>Nhẫn vàng 24K họa tiết hoa nhí kim cương</h3>
+                    <p class="price">4.200.000đ</p>
+                </div>
+
+                <div class="product-card">
+                    <span class="badge">HOT</span>
+                    <img src="../assets/images/day-chuyen.jpg" alt="Dây chuyền vàng 24K đơn giản">
+                    <h3>Dây chuyền vàng 24K đơn giản</h3>
+                    <p class="price">10.900.000đ</p>
+                </div>
+
+                <div class="product-card">
+                    <span class="badge">HOT</span>
+                    <img src="../assets/images/day-chuyen.jpg" alt="Dây chuyền vàng 24K sang trọng">
+                    <h3>Dây chuyền vàng 24K sang trọng</h3>
+                    <p class="price">12.100.000đ</p>
+                </div>
+
+                <div class="product-card">
+                    <span class="badge">NEW</span>
+                    <img src="../assets/images/vong-charm-2.jpg" alt="Vòng charm vàng 24K đính đá quý">
+                    <h3>Vòng charm vàng 24K đính đá quý</h3>
+                    <p class="old-price">5.800.000đ</p>
+                    <p class="price">5.300.000đ</p>
+                </div>
+
+                <div class="product-card">
+                    <span class="badge">NEW</span>
+                    <img src="../assets/images/vong-charm-2.jpg" alt="Vòng charm vàng 24K cao cấp">
+                    <h3>Vòng charm vàng 24K cao cấp</h3>
+                    <p class="old-price">6.000.000đ</p>
+                    <p class="price">5.400.000đ</p>
+                </div>
+
+                <div class="product-card">
+                    <span class="badge">-20%</span>
+                    <img src="../assets/images/lac-tay.jpg" alt="Vòng tay hồ điệp vàng 24K đính đá">
+                    <h3>Vòng tay hồ điệp vàng 24K đính đá</h3>
+                    <p class="old-price">7.000.000đ</p>
+                    <p class="price">5.600.000đ</p>
+                </div>
+
+                <div class="product-card">
+                    <img src="../assets/images/nhan-vang.jpg" alt="Nhẫn vàng 24K thiết kế mới">
+                    <h3>Nhẫn vàng 24K thiết kế mới</h3>
+                    <p class="price">4.500.000đ</p>
+                </div>
+                <div class="product-card" data-price="4800000" data-material="vàng 24k" data-collection="hồ điệp">
+                    <span class="badge">NEW</span>
+                    <img src="../assets/images/vong-charm-2.jpg" alt="Vòng charm vàng 24K DOJI">
+                    <h3>Vòng charm vàng 24K DOJI</h3>
+                    <p class="old-price">5.200.000đ</p>
+                    <p class="price">4.800.000đ</p>
+                </div>
+
+                <div class="product-card" data-price="5900000" data-material="vàng 24k" data-collection="hồ điệp">
+                    <span class="badge">-10%</span>
+                    <img src="../assets/images/lac-tay.jpg" alt="Vòng tay hồ điệp vàng 24K">
+                    <h3>Vòng tay hồ điệp vàng 24K</h3>
+                    <p class="old-price">6.500.000đ</p>
+                    <p class="price">5.900.000đ</p>
+                </div>
+
+                <div class="product-card" data-price="4200000" data-material="vàng 24k" data-collection="khác">
+                    <img src="../assets/images/nhan-vang.jpg" alt="Nhẫn vàng 24K họa tiết hoa nhí kim cương">
+                    <h3>Nhẫn vàng 24K họa tiết hoa nhí kim cương</h3>
+                    <p class="price">4.200.000đ</p>
+                </div>
+
+                <div class="product-card" data-price="11300000" data-material="vàng 24k" data-collection="khác">
+                    <span class="badge">HOT</span>
+                    <img src="../assets/images/day-chuyen.jpg" alt="Dây chuyền vàng 24K">
+                    <h3>Dây chuyền vàng 24K</h3>
+                    <p class="price">11.300.000đ</p>
+                </div>
+
+                <!-- ... các product-card khác tương tự, nhớ thêm thuộc tính data-price, data-material, data-collection -->
+
+
+                <!-- copy thêm card nếu cần -->
+            </div>
+
+        </section>
+
+        <!-- ===== PAGINATION ===== -->
+        <div class="pagination">
+            <span class="page active">1</span>
+            <a href="#" class="page">2</a>
+            <a href="#" class="page">3</a>
+            <a href="#" class="page">4</a>
+            <a href="#" class="page">5</a>
+            <a href="#" class="page">»</a>
+            <a href="#" class="page">Last</a>
+        </div>
+        <div class="product-card" data-price="4800000" data-material="vàng 24k" data-collection="hồ điệp">
+            ...
+        </div>
+
+        <!-- ===== FOOTER ===== -->
+        <footer class="footer">
+            <div class="footer-container">
+
+                <div class="footer-col logo-col">
+                    <img src="../assets/images/logo.png" class="footer-logo">
+                    <ul>
+                        <li>Công ty Cổ phần Tập đoàn Vàng Bạc Đá Quý DOJI</li>
+                        <li>Địa chỉ: Tòa nhà DOJI Tower, Hà Nội</li>
+                        <li>Hotline: 1800 1168</li>
+                    </ul>
+                </div>
+
+                <div class="footer-col">
+                    <h4>DỊCH VỤ KHÁCH HÀNG</h4>
+                    <ul>
+                        <li><a href="#">Điều khoản mua bán</a></li>
+                        <li><a href="#">Chính sách & Bảo hành</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-col">
+                    <h4>PHƯƠNG THỨC THANH TOÁN</h4>
+                    <div class="payment">
+                        <img src="../assets/images/visa.png">
+                        <img src="../assets/images/vn-pay.jpg">
+                    </div>
+                </div>
+            </div>
+
+            <div class="copyright">
+                Copyright 2024 © DOJI Gold & Gems Group
+            </div>
+        </footer>
+
+        <script>
+            document.addEventListener('DOMContentLoaded', () => {
+                const priceFilter = document.getElementById('filter-price');
+                const materialFilter = document.getElementById('filter-material');
+                const collectionFilter = document.getElementById('filter-collection');
+                const sortSelect = document.getElementById('sort-products');
+                const productGrid = document.querySelector('.product-grid');
+                const products = productGrid.querySelectorAll('.product-card');
+
+                function filterProducts() {
+                    const priceValue = priceFilter.value;
+                    const materialValue = materialFilter.value;
+                    const collectionValue = collectionFilter.value;
+
+                    products.forEach(product => {
+                        const price = parseInt(product.dataset.price, 10);
+                        const material = product.dataset.material;
+                        const collection = product.dataset.collection;
+
+                        let priceMatch = false;
+                        let materialMatch = false;
+                        let collectionMatch = false;
+
+                        // Kiểm tra giá
+                        if (priceValue === 'all') {
+                            priceMatch = true;
+                        } else if (priceValue === 'under5') {
+                            priceMatch = price > 0 && price < 5000000;
+                        } else if (priceValue === '5to10') {
+                            priceMatch = price >= 5000000 && price <= 10000000;
+                        } else if (priceValue === 'above10') {
+                            priceMatch = price > 10000000;
+                        }
+
+                        // Kiểm tra chất liệu
+                        if (materialValue === 'all') {
+                            materialMatch = true;
+                        } else {
+                            materialMatch = material === materialValue;
+                        }
+
+                        // Kiểm tra bộ sưu tập
+                        if (collectionValue === 'all') {
+                            collectionMatch = true;
+                        } else {
+                            collectionMatch = collection === collectionValue;
+                        }
+
+                        if (priceMatch && materialMatch && collectionMatch) {
+                            product.style.display = '';
+                        } else {
+                            product.style.display = 'none';
+                        }
+                    });
+                }
+
+                function sortProducts() {
+                    const sortValue = sortSelect.value;
+                    const productsArray = Array.from(products);
+
+                    productsArray.sort((a, b) => {
+                        const priceA = parseInt(a.dataset.price, 10);
+                        const priceB = parseInt(b.dataset.price, 10);
+
+                        if (sortValue === 'price-asc') {
+                            return priceA - priceB;
+                        } else if (sortValue === 'price-desc') {
+                            return priceB - priceA;
+                        } else if (sortValue === 'newest') {
+                            // Không có dữ liệu ngày, giữ nguyên thứ tự
+                            return 0;
+                        }
+                        return 0;
+                    });
+
+                    while (productGrid.firstChild) {
+                        productGrid.removeChild(productGrid.firstChild);
+                    }
+                    productsArray.forEach(p => productGrid.appendChild(p));
+                }
+
+                // Lắng nghe sự kiện thay đổi filter và sắp xếp
+                priceFilter.addEventListener('change', () => {
+                    filterProducts();
+                    sortProducts();
+                });
+                materialFilter.addEventListener('change', () => {
+                    filterProducts();
+                    sortProducts();
+                });
+                collectionFilter.addEventListener('change', () => {
+                    filterProducts();
+                    sortProducts();
+                });
+                sortSelect.addEventListener('change', () => {
+                    sortProducts();
+                });
+
+                // Khởi tạo hiển thị
+                filterProducts();
+            });
+
+            document.addEventListener('DOMContentLoaded', () => {
+                const priceFilter = document.getElementById('filter-price');
+                const materialFilter = document.getElementById('filter-material');
+                const collectionFilter = document.getElementById('filter-collection');
+                const sortSelect = document.getElementById('sort-products');
+                const productGrid = document.querySelector('.product-grid');
+                const products = productGrid.querySelectorAll('.product-card');
+
+                // Hàm lọc sản phẩm
+                function filterProducts() {
+                    const priceValue = priceFilter.value;
+                    const materialValue = materialFilter.value;
+                    const collectionValue = collectionFilter.value;
+
+                    products.forEach(product => {
+                        const price = parseInt(product.dataset.price, 10);
+                        const material = product.dataset.material.toLowerCase();
+                        const collection = product.dataset.collection.toLowerCase();
+
+                        let priceMatch = false;
+                        let materialMatch = false;
+                        let collectionMatch = false;
+
+                        // Kiểm tra giá
+                        if (priceValue === 'all') {
+                            priceMatch = true;
+                        } else if (priceValue === 'under5') {
+                            priceMatch = price > 0 && price < 5000000;
+                        } else if (priceValue === '5to10') {
+                            priceMatch = price >= 5000000 && price <= 10000000;
+                        } else if (priceValue === 'above10') {
+                            priceMatch = price > 10000000;
+                        }
+
+                        // Kiểm tra chất liệu
+                        if (materialValue === 'all') {
+                            materialMatch = true;
+                        } else {
+                            materialMatch = material === materialValue.toLowerCase();
+                        }
+
+                        // Kiểm tra bộ sưu tập
+                        if (collectionValue === 'all') {
+                            collectionMatch = true;
+                        } else {
+                            collectionMatch = collection === collectionValue.toLowerCase();
+                        }
+
+                        // Hiển thị hoặc ẩn sản phẩm
+                        product.style.display = priceMatch && materialMatch && collectionMatch ? '' : 'none';
+                    });
+                }
+
+                // Hàm sắp xếp sản phẩm
+                function sortProducts() {
+                    const sortValue = sortSelect.value;
+                    const productsArray = Array.from(products).filter(p => p.style.display !== 'none');
+
+                    productsArray.sort((a, b) => {
+                        const priceA = parseInt(a.dataset.price, 10);
+                        const priceB = parseInt(b.dataset.price, 10);
+
+                        if (sortValue === 'price-asc') {
+                            return priceA - priceB;
+                        } else if (sortValue === 'price-desc') {
+                            return priceB - priceA;
+                        } else if (sortValue === 'newest') {
+                            // Giữ nguyên thứ tự ban đầu nếu muốn
+                            return 0;
+                        }
+                        return 0;
+                    });
+
+                    // Xóa và thêm lại
+                    productsArray.forEach(p => productGrid.appendChild(p));
+                }
+
+                // Lắng nghe sự kiện thay đổi filter và sort
+                priceFilter.addEventListener('change', () => { filterProducts(); sortProducts(); });
+                materialFilter.addEventListener('change', () => { filterProducts(); sortProducts(); });
+                collectionFilter.addEventListener('change', () => { filterProducts(); sortProducts(); });
+                sortSelect.addEventListener('change', () => { sortProducts(); });
+
+                // Hiển thị ban đầu
+                filterProducts();
+                sortProducts();
+            });
+
+
+        </script>
+
+
+    </body>
+
+</html>
